@@ -85,4 +85,9 @@ class Handler implements ExceptionHandler
             $this->exceptionHandler->renderForConsole($output, $e);
         }
     }
+    
+    public function shouldReport(Exception $e)
+    {
+        return true;
+    }
 }
