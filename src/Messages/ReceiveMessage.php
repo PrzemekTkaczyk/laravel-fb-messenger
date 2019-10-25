@@ -43,6 +43,11 @@ class ReceiveMessage
     /**
      * @var string
      */
+    private $mid;
+
+    /**
+     * @var string
+     */
     private $recipient;
 
     /**
@@ -260,5 +265,28 @@ class ReceiveMessage
     public function getNlp()
     {
         return $this->nlp;
+    }
+
+    /**
+     * Get mid
+     *
+     * @return string
+     */
+    public function getMid()
+    {
+        return $this->mid;
+    }
+
+    /**
+     * Set mid
+     *
+     * @param string $mid
+     *
+     * @return $this
+     */
+    public function setMid($mid)
+    {
+        $this->mid = $mid;
+        return $this;
     }
 }

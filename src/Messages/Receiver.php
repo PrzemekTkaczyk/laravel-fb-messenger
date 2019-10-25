@@ -57,6 +57,7 @@ class Receiver
             if (Arr::has($message, 'postback.payload') || Arr::has($message, 'message.quick_reply.payload')) {
                 $receiveMessage
                     ->setMessage(Arr::get($message, 'message.text'))
+                    ->setMid(Arr::get($message, 'message.mid'))
                     ->setReferral(Arr::get($message, 'postback.referral', []))
                     ->setPostback(Arr::get(
                         $message,
@@ -70,6 +71,7 @@ class Receiver
             } else {
                 $receiveMessage
                     ->setMessage(Arr::get($message, 'message.text'))
+                    ->setMid(Arr::get($message, 'message.mid'))
                     ->setReferral(Arr::get($message, 'referral', []))
                     ->setSkip(
                         Arr::has($message, 'delivery') ||
