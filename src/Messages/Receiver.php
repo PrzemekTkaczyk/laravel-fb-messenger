@@ -78,8 +78,8 @@ class Receiver
                         || Arr::has($message, 'message.is_echo')
                     )
                     ->setAttachments(Arr::get($message, 'message.attachments', []))
-                    ->setStatus(Arr::get($message, 'message.read', []), 'read')
-                    ->setStatus(Arr::get($message, 'message.delivery', []), 'delivery')
+                    ->setStatus(Arr::get($message, 'message.read', null), 'read')
+                    ->setStatus(Arr::get($message, 'message.delivery.mids', []), 'delivery')
                     ->setNlp(Arr::get($message, 'message.nlp', []));
             }
 

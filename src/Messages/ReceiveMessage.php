@@ -64,6 +64,10 @@ class ReceiveMessage
      * @var array
      */
     private $nlp = [];
+    /**
+     * @var array
+     */
+    private $status = [];
 
     /**
      * Receive constructor.
@@ -208,6 +212,35 @@ class ReceiveMessage
     public function getAttachments()
     {
         return $this->attachments;
+    }
+
+    /**
+     * Set status
+     *
+     * @param $status
+     * @param $type
+     * @return $this
+     */
+    public function setStatus($status, $type)
+    {
+        if ($status) {
+            $this->status[$type] = $status;
+        }
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @param null $type
+     * @return array
+     */
+    public function getStatus($type = null)
+    {
+        if ($type) {
+            return $this->status[$type] ?? [];
+        }
+        return $this->status;
     }
 
     /**
