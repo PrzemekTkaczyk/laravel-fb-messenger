@@ -73,10 +73,7 @@ class Receiver
                     ->setMessage(Arr::get($message, 'message.text'))
                     ->setMid(Arr::get($message, 'message.mid'))
                     ->setReferral(Arr::get($message, 'referral', []))
-                    ->setSkip((
-                        !Arr::has($message, 'message.text') && !Arr::has($message, 'message.attachments'))
-                        || Arr::has($message, 'message.is_echo')
-                    )
+                    ->setSkip(Arr::has($message, 'message.is_echo'))
                     ->setAttachments(Arr::get($message, 'message.attachments', []))
                     ->setStatus(Arr::get($message, 'message.read', null), 'read')
                     ->setStatus(Arr::get($message, 'message.delivery.mids', []), 'delivery')
