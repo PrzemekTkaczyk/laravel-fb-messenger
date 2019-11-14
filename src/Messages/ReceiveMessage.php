@@ -262,7 +262,6 @@ class ReceiveMessage
      */
     public function setReferral($referral)
     {
-        \Log::info('Referral: '. $referral);
         $this->referral = $referral;
 
         return $this;

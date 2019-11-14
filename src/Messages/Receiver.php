@@ -40,7 +40,7 @@ class Receiver
      */
     public function __construct(Request $request, $filterSkip = true)
     {
-        \Log::info('IncomingMessage: ', json_encode($request->entry, JSON_PRETTY_PRINT));
+        \Log::info('IncomingMessage: '. json_encode($request->entry, JSON_PRETTY_PRINT));
         $this->messaging = $request->input('entry.0.messaging') ? $request->input('entry.0.messaging') : [];
         $this->filterSkip = $filterSkip;
         $this->boot();
