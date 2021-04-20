@@ -10,6 +10,7 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts\Debug;
 
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
+use Throwable;
 
 class Handler implements ExceptionHandler
 {
@@ -40,7 +41,7 @@ class Handler implements ExceptionHandler
      *
      * @return void
      */
-    public function report(Exception $e)
+    public function report(Throwable $e)
     {
         if ($this->exceptionHandler !== null) {
             $this->exceptionHandler->report($e);
@@ -55,7 +56,7 @@ class Handler implements ExceptionHandler
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \UnexpectedValueException
      */
-    public function render($request, Exception $e)
+    public function render($request, Throwable $e)
     {
         $errors = [
             'message' => $e->getMessage(),
@@ -79,7 +80,7 @@ class Handler implements ExceptionHandler
      * @param  \Exception $e
      * @return void
      */
-    public function renderForConsole($output, Exception $e)
+    public function renderForConsole($output, Throwable $e)
     {
         if ($this->exceptionHandler !== null) {
             $this->exceptionHandler->renderForConsole($output, $e);
@@ -93,7 +94,7 @@ class Handler implements ExceptionHandler
      *
      * @return bool
      */
-    public function shouldReport(Exception $e)
+    public function shouldReport(Throwable $e)
     {
         return true;
     }
