@@ -18,12 +18,12 @@
         }
     ],
     "require": {
-        "illuminate/support": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6",
-        "illuminate/routing": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6",
-        "illuminate/console": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6",
-        "illuminate/view": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6",
-        "illuminate/broadcasting": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6",
-        "illuminate/queue": "~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|~6",
+        "illuminate/support": "7.x-dev",
+        "illuminate/routing": "7.x-dev",
+        "illuminate/console": "7.x-dev",
+        "illuminate/view": "7.x-dev",
+        "illuminate/broadcasting": "7.x-dev",
+        "illuminate/queue": "7.x-dev",
         "php": ">=5.6.4",
         "guzzlehttp/guzzle": "^6.0"
     },
