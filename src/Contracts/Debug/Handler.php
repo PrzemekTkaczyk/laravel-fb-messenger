@@ -62,9 +62,9 @@ class Handler implements ExceptionHandler
             'message' => $e->getMessage(),
             'trace' => collect($e->getTrace())->map(function ($item) {
                 return [
-                    'file' => array_get($item, 'file'),
-                    'line' => array_get($item, 'line'),
-                    'method' => array_get($item, 'function'),
+                    'file' => Arr::get($item, 'file'),
+                    'line' => Arr::get($item, 'line'),
+                    'method' => Arr::get($item, 'function'),
                 ];
             })->toArray(),
         ];
