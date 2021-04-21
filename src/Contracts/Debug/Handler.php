@@ -11,6 +11,7 @@ namespace Casperlaitw\LaravelFbMessenger\Contracts\Debug;
 use Exception;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Throwable;
+use Illuminate\Support\Arr;
 
 class Handler implements ExceptionHandler
 {
