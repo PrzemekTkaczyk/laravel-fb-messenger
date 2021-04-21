@@ -7,8 +7,11 @@
 
 namespace Casperlaitw\LaravelFbMessenger\Contracts;
 
+use Illuminate\Support\Arr;
+
 /**
  * Class HandleMessageResponse
+ *
  * @package Casperlaitw\LaravelFbMessenger\Contracts
  */
 class HandleMessageResponse
@@ -37,7 +40,7 @@ class HandleMessageResponse
         if (!empty($this->response['error'])) {
             return $this->handleError($this->response['error']);
         }
-        return array_get($this->response, 'result', $this->response);
+        return Arr::get($this->response, 'result', $this->response);
     }
 
     /**
